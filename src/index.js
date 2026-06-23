@@ -7,7 +7,7 @@ const contentDiv = document.getElementById("content");
 
 const buttons = {
   home: document.getElementById("home-btn"),
-  menu: document.getElementById("menu-btn"), // Fixed typo 'meu-btn'
+  menu: document.getElementById("menu-btn"),
   contact: document.getElementById("contact-btn"),
 };
 
