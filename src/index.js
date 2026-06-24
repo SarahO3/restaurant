@@ -23,7 +23,7 @@ function switchTab(tabElement, activeButton){
 
 // Event listeners
 buttons.home.addEventListener("click", () => switchTab(loadHome(), buttons.home));
-buttons.menu.addEventListener("click", () => switchTab(loadMenu(), buttons.menu)); // Fixed typo 'mene' -> 'menu'
+buttons.menu.addEventListener("click", () => switchTab(loadMenu(), buttons.menu)); 
 buttons.contact.addEventListener("click", () => switchTab(loadContact(), buttons.contact));
 
 // Initial page mount
