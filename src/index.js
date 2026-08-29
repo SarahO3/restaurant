@@ -3,13 +3,14 @@ import { loadHome } from "./modules/home.js";
 import { loadMenu } from "./modules/menu.js";
 import { loadContact } from "./modules/contact.js";
 
-const contentDiv = document.getElementById("content");
-
 const buttons = {
   home: document.getElementById("home-btn"),
   menu: document.getElementById("menu-btn"),
   contact: document.getElementById("contact-btn"),
 };
+
+const contentDiv = document.getElementById("content");
+
 
 function switchTab(tabElement, activeButton){
   // Clear page content

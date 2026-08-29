@@ -7,18 +7,24 @@ export function loadHome(){
   
   container.style.backgroundImage = `url(${backgroundImage})`;
 
-  const contentDiv = document.createElement("div");
-  contentDiv.classList.add("home-content"); 
+  container.innerHTML = `
+    <div class="home-content">
+      <h1>Eka's Delight</h1>
+      <p>Just like mama's.</p>
+    </div>
+  `
+  // const contentDiv = document.createElement("div");
+  // contentDiv.classList.add("home-content"); 
 
-  const headline = document.createElement("h1");
-  headline.textContent = "Eka's Delight";
+  // const headline = document.createElement("h1");
+  // headline.textContent = "Eka's Delight";
 
-  const description = document.createElement("p");
-  description.textContent = "Just like mama's.";
+  // const description = document.createElement("p");
+  // description.textContent = "Just like mama's.";
 
-  contentDiv.appendChild(headline);
-  contentDiv.appendChild(description);
-  container.appendChild(contentDiv);
+  // contentDiv.appendChild(headline);
+  // contentDiv.appendChild(description);
+  // container.appendChild(contentDiv);
 
   return container;
 } 

@@ -1,64 +1,66 @@
+
 import bgImg from "../assets/images/bg.jpg";
 import foodImg from "../assets/images/food.jpg";
-import foodieImg from "../assets/images/foodie.jpg"; 
+import foodieImg from "../assets/images/foodie.jpg";
 
-export function loadMenu(){ 
-    const container = document.createElement("div");
-    container.classList.add("tab-container", "menu-page");
+export function loadMenu() {
+  const container = document.createElement("div");
 
-    const headline = document.createElement("h1");
-    headline.textContent = "Explore our flavourful dishes";
-    container.appendChild(headline);
+  container.classList.add("tab-container", "menu-page");
 
-    const grid = document.createElement("div");
-    grid.classList.add("menu-grid");
+  container.innerHTML = `
+    <h1>Explore our flavourful dishes</h1>
+    <div class="menu-grid"></div>
+  `;
 
-    const menuItems = [
-      { 
-        name: "Truffle Pasta",
-        price: "$300",
-        img: bgImg,
-        desc: "Yummy and tasty."
-      },
-      { 
-        name: "WoodFired Pasta",
-        price: "$350",
-        img: foodImg,
-        desc: "Woody flavours infused."
-      },
-      { 
-        name: "Fruit Pasta",
-        price: "$500",
-        img: foodieImg, 
-        desc: "Fruit overdose."
-      },
-    ];
+  const grid = container.querySelector(".menu-grid");
 
-    menuItems.forEach(item => {
-         const card = document.createElement("div");
-         card.classList.add("menu-card");
+  const menuItems = [
+    {
+      name: "Truffle Pasta",
+      price: "$300",
+      img: bgImg,
+      desc: "Yummy and tasty."
+    },
+    {
+      name: "WoodFired Pasta",
+      price: "$350",
+      img: foodImg,
+      desc: "Woody flavours infused."
+    },
+    {
+      name: "Fruit Pasta",
+      price: "$500",
+      img: foodieImg,
+      desc: "Fruit overdose."
+    }
+  ];
 
-         const img = document.createElement("img");
-         img.src = item.img;
-         img.alt = item.name;
-         img.classList.add("menu-img");
+  menuItems.forEach((item) => {
+    const card = document.createElement("div");
 
-         const info = document.createElement("div");
-         info.classList.add("menu-info");
+    card.classList.add("menu-card");
 
-         const titleWrapper = document.createElement("h3");
-         titleWrapper.innerHTML = `${item.name} <span class="menu-price">${item.price}</span>`;
-        
-         const descText = document.createElement("p");
-         descText.textContent = item.desc;
+    card.innerHTML = `
+      <img
+        class="menu-img"
+        src="${item.img}"
+        alt="${item.name}"
+      />
 
-         info.appendChild(titleWrapper);
-         info.appendChild(descText);
-         card.appendChild(img);
-         card.appendChild(info);
-         grid.appendChild(card);
-    });
+      <div class="menu-info">
+        <h3>
+          ${item.name}
+          <span class="menu-price">${item.price}</span>
+        </h3>
 
-    container.appendChild(grid);
-    return container;
+        <p>${item.desc}</p>
+      </div>
+    `;
+
+    grid.appendChild(card);
+  });
+
+  return container;
 }
+
